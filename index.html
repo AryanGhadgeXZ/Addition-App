@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition App</title>
+    <style>
+        * { font-size: 50px; font-family: 'Times New Roman', Times, serif;}
+        body { background-color: rgb(255, 196, 0);}
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Addition App</h1>
+        <form onsubmit="add()">
+            <input type="number" step="any" id="num1" placeholder="Enter First Number">
+            <br><br>
+            <input type="number" step="any" id="num2" placeholder="Enter Second Number">
+            <br><br>
+            <input type="submit" value="Add">
+        </form>
+        <h2 id="msg"></h2>
+        <script>
+            function add(){
+                event.preventDefault();
+                let num1 = document.getElementById("num1");
+                let num2 = document.getElementById("num2");
+                let msg = document.getElementById("msg");
+
+                if(num1.value == "")
+                {
+                    alert("U did not enter the first number");
+                    msg.innerHtml ="";
+                    num1.focus();
+                    return;
+                }
+                if(num1.value == "")
+                {
+                    alert("U did not enter the Second number");
+                    msg.innerHtml ="";
+                    num2.focus();
+                    return;
+                }
+                let n1 = parseFloat(num1.value);
+                let n2 = parseFloat(num1.value);
+                let res = n1 + n2;
+                let ans = "addm = " + res.toFixed(2);
+                msg.innerHTML = ans;
+            }
+        </script>
+    </center>
+    
+</body>
+</html>
